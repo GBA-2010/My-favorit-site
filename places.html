@@ -3,23 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Favorite places</title>
+    <title>My Favorite Places</title>
+
+    <!-- Подключение Bootstrap CSS -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
       crossorigin="anonymous"
     />
-    />
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-      crossorigin="anonymous"
-    ></script>
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- Дополнительные стили -->
     <style>
       .card {
         border-radius: 1em;
@@ -35,124 +29,120 @@
         margin: auto;
       }
     </style>
-    <head>
-      <body>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-          <div class="container">
-            <a class="navbar-brand p-0" href="/">
-              <img src="BB.png" alt="My icon" width="40" />
-            </a>
-            <button
-              class="navbar-toggler"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarNav"
-              aria-controls="navbarNav"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav">
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="/"
-                    >Home</a
-                  >
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="index.html">Favorite places</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </nav>
-        <div class="container my-5">
-          <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-5">
-            <div class="col">
-              <div class="card">
-                <img
-                  src="https://picsum.photos/id/11/300"
-                  class="card-img-top"
-                  alt="My imge"
-                />
-                <div class="card-body">
-                  <h5 class="card-title">Утренняя дымка над рекой</h5>
-                  <p class="card-text">
-                    На этом снимке изображена живописная долина, окутанная
-                    утренней дымкой. По извилистому руслу спокойно течет река,
-                    отражая пасмурное небо. По берегам возвышаются зеленые холмы
-                    и лесистые горы, укутанные туманом, что создает ощущение
-                    спокойствия и умиротворения. Передний план занимает
-                    травянистый берег, добавляя глубину и перспективу этой
-                    природной сцене.
-                  </p>
-                  <a
-                    href="https://picsum.photos/id/11/1500"
-                    target="_blank"
-                    class="btn btn-primary"
-                    >large Photo</a
-                  >
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card">
-                <img
-                  src="https://picsum.photos/id/12/300"
-                  class="card-img-top"
-                  alt="My imge"
-                />
-                <div class="card-body">
-                  <h5 class="card-title">Скалы у океана</h5>
-                  <p class="card-text">
-                    На этом фото запечатлен морской пейзаж с крупными, темными
-                    скалами на переднем плане. За ними виднеется песчаный пляж,
-                    на который набегают волны. На горизонте, под серым небом,
-                    просматривается очертание острова или мыса, окутанного
-                    лёгкой дымкой. Снимок передает ощущение суровой, но
-                    величественной красоты дикой природы, где скалы служат
-                    надёжным барьером между сушей и бескрайним океаном.
-                  </p>
-                  <a
-                    href="https://picsum.photos/id/12/1500"
-                    target="_blank"
-                    class="btn btn-primary"
-                    >large Photo</a
-                  >
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card">
-                <img
-                  src="https://picsum.photos/id/28/1500"
-                  class="card-img-top"
-                  alt="My imge"
-                />
-                <div class="card-body">
-                  <h5 class="card-title">Лесной водопад</h5>
-                  <p class="card-text">
-                    На этом фото изображен лесной ручей или водопад,
-                    пробивающийся сквозь каменистое русло. Вода стекает по
-                    скалистым уступам, окруженным буйной зеленью. Деревья с
-                    густой листвой образуют живой коридор, а вдалеке виднеется
-                    просвет в небо с белыми облаками. Картина передает ощущение
-                    прохлады и свежести дикого леса, где природа предстает в
-                    своей первозданной красоте.
-                  </p>
-                  <a
-                    href="https://picsum.photos/id/28/1500"
-                    target="_blank"
-                    class="btn btn-primary"
-                    >large Photo</a
-                  >
-                </div>
-              </div>
+
+    <!-- Фавиконы -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+  </head>
+
+  <body>
+    <!-- Навигационная панель -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand p-0" href="/">
+          <img src="BB.png" alt="My icon" width="40" />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Favorite places</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Контейнер с карточками -->
+    <div class="container my-5">
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-5">
+        <div class="col">
+          <div class="card">
+            <img
+              src="https://picsum.photos/id/11/300"
+              class="card-img-top"
+              alt="My image"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Утренняя дымка над рекой</h5>
+              <p class="card-text">
+                На этом снимке изображена живописная долина, окутанная утренней
+                дымкой...
+              </p>
+              <a
+                href="https://picsum.photos/id/11/1500"
+                target="_blank"
+                class="btn btn-primary"
+                >Large photo</a
+              >
             </div>
           </div>
         </div>
-      </body>
-    </head>
-  </head>
+        <div class="col">
+          <div class="card">
+            <img
+              src="https://picsum.photos/id/12/300"
+              class="card-img-top"
+              alt="My image"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Скалы у океана</h5>
+              <p class="card-text">
+                На этом фото запечатлён морской пейзаж с крупными тёмными скалами...
+              </p>
+              <a
+                href="https://picsum.photos/id/12/1500"
+                target="_blank"
+                class="btn btn-primary"
+                >Large photo</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <img
+              src="https://picsum.photos/id/28/300"
+              class="card-img-top"
+              alt="My image"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Лесной водопад</h5>
+              <p class="card-text">
+                На этом фото изображён лесной ручей или водопад, пробивающийся...
+              </p>
+              <a
+                href="https://picsum.photos/id/28/1500"
+                target="_blank"
+                class="btn btn-primary"
+                >Large photo</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Подключение Bootstrap JavaScript в конце перед закрывающим телом -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
