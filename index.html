@@ -65,7 +65,7 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="9">Home</a>
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="places.html">Favorite places</a>
@@ -110,9 +110,16 @@
       crossorigin="anonymous"
     ></script>
     <script>
+      // 1. Проверяем, авторизован ли пользователь при загрузке страницы
+      const isAuthenticated = localStorage.getItem("isAuthenticated");
+      if (isAuthenticated === "true") {
+        document.getElementById("login-form").classList.add("hidden");
+        document.getElementById("website-content").classList.remove("hidden");
+      }
+
       function checkCredentials() {
-        const correctLogin = "Bogdan12345"; // ❗ Замените на ваш логин
-        const correctPassword = "12345"; // ❗ Замените на ваш пароль
+        const correctLogin = "1";
+        const correctPassword = "1";
 
         const enteredLogin = document.getElementById("loginInput").value;
         const enteredPassword = document.getElementById("passwordInput").value;
@@ -122,6 +129,9 @@
           enteredLogin === correctLogin &&
           enteredPassword === correctPassword
         ) {
+          // 2. Если вход успешен, сохраняем флаг в localStorage
+          localStorage.setItem("isAuthenticated", "true");
+
           document.getElementById("login-form").classList.add("hidden");
           document.getElementById("website-content").classList.remove("hidden");
         } else {
@@ -132,4 +142,3 @@
     </script>
   </body>
 </html>
-
