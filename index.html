@@ -129,30 +129,26 @@
         const enteredPassword = document.getElementById("passwordInput").value;
         const messageElement = document.getElementById("message");
 
-        if (
-          enteredLogin === correctLogin &&
-          enteredPassword === correctPassword
-        ) {
+        if (enteredLogin === correctLogin && enteredPassword === correctPassword) {
           // 2. Если вход успешен, сохраняем флаг в localStorage, чтобы запомнить состояние.
           localStorage.setItem("isAuthenticated", "true");
 
           document.getElementById("login-form").classList.add("hidden");
           document.getElementById("website-content").classList.remove("hidden");
         } else {
-          messageElement.textContent =
-            "Неверный логин или пароль. Попробуйте снова.";
+          messageElement.textContent = "Неверный логин или пароль. Попробуйте снова.";
         }
       }
 
       // 3. Добавляем прослушиватель событий для клавиши Enter на поле пароля.
       const passwordInput = document.getElementById("passwordInput");
-      passwordInput.addEventListener("keydown", function (event) {
+      passwordInput.addEventListener("keydown", function(event) {
         if (event.key === "Enter") {
-          event.preventDefault();
+          event.preventDefault(); 
           checkCredentials();
         }
       });
-
+      
       // 4. Новая функция для выхода из системы.
       // Она удаляет флаг из localStorage и показывает форму входа.
       function logout() {
@@ -160,7 +156,7 @@
         document.getElementById("login-form").classList.remove("hidden");
         document.getElementById("website-content").classList.add("hidden");
         // Перезагрузка страницы, чтобы полностью сбросить состояние
-        window.location.reload();
+        window.location.reload(); 
       }
     </script>
   </body>
