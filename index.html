@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bogdan Bogdan</title>
+    <title>Богдан Гребенюк</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -14,19 +14,69 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="manifest" href="/site.webmanifest" />
+
     <style>
+      /* Основные стили для сайта */
+      body {
+        background-color: #f8f9fa; /* Светло-серый фон для всей страницы */
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, sans-serif;
+      }
+
+      /* Стили для формы входа */
       #login-form {
         text-align: center;
         margin-top: 100px;
+        background-color: #ffffff;
+        padding: 40px;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
       }
+
       #login-form input,
       #login-form button {
-        padding: 10px;
-        margin: 5px;
+        padding: 12px;
+        margin: 8px;
+        border-radius: 5px;
+        border: 1px solid #ddd;
+        transition: all 0.3s ease;
       }
+
+      #login-form input:focus {
+        outline: none;
+        border-color: #007bff;
+        box-shadow: 0 0 5px rgba(0, 123, 255, 0.25);
+      }
+
+      #login-form button {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+
+      #login-form button:hover {
+        background-color: #0056b3;
+      }
+
       .hidden {
         display: none;
       }
+
+      /* Стили для основного контента */
+      #website-content {
+        background: linear-gradient(
+          135deg,
+          #e0eafc,
+          #cfdef3
+        ); /* Мягкий, красивый градиент */
+        min-height: 100vh;
+        padding-top: 20px;
+      }
+
       .rouned-img {
         width: 60%;
         border-radius: 50%;
@@ -91,7 +141,7 @@
               показываю места, которые меня впечатлили, и рассказываю о том, что
               осталось за кадром. Присоединяйтесь к моему путешествию и откройте
               для себя новые направления.
-              <a href="https://ya.ru/" target="_ blank" class="btn btn-primary">
+              <a href="https://ya.ru/" target="_blank" class="btn btn-primary">
                 My website
               </a>
               <a
@@ -114,12 +164,18 @@
     ></script>
     <script>
       // 1. Проверяем, авторизован ли пользователь при загрузке страницы
-      const isAuthenticated = localStorage.getItem("isAuthenticated");
-      if (isAuthenticated === "true") {
-        document.getElementById("login-form").classList.add("hidden");
-        document.getElementById("website-content").classList.remove("hidden");
-      }
+      document.addEventListener("DOMContentLoaded", () => {
+        const isAuthenticated = localStorage.getItem("isAuthenticated");
+        if (isAuthenticated === "true") {
+          document.getElementById("login-form").classList.add("hidden");
+          document.getElementById("website-content").classList.remove("hidden");
+        } else {
+          document.getElementById("login-form").classList.remove("hidden");
+          document.getElementById("website-content").classList.add("hidden");
+        }
+      });
 
+      // 2. Функция для проверки учетных данных и входа
       function checkCredentials() {
         const correctLogin = "12345";
         const correctPassword = "12345";
@@ -142,10 +198,9 @@
       }
 
       // 3. Добавляем прослушиватель событий для клавиши Enter
-      const passwordInput = document.getElementById("passwordInput");
-      passwordInput.addEventListener("keydown", function (event) {
+      document.addEventListener("keydown", function (event) {
         if (event.key === "Enter") {
-          event.preventDefault();
+          event.preventDefault(); // Предотвращаем стандартное поведение (отправку формы)
           checkCredentials();
         }
       });
@@ -155,10 +210,8 @@
         localStorage.removeItem("isAuthenticated");
         document.getElementById("login-form").classList.remove("hidden");
         document.getElementById("website-content").classList.add("hidden");
-        window.location.reload();
+        window.location.reload(); // Перезагружаем страницу для очистки
       }
     </script>
   </body>
 </html>
-
-
