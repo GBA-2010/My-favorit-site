@@ -18,7 +18,7 @@
     <style>
       /* Основные стили для сайта */
       body {
-        background-color: #f8f9fa; /* Светло-серый фон для всей страницы */
+        background-color: #f8f9fa;
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
           "Helvetica Neue", Arial, sans-serif;
       }
@@ -68,11 +68,7 @@
 
       /* Стили для основного контента */
       #website-content {
-        background: linear-gradient(
-          135deg,
-          #e0eafc,
-          #cfdef3
-        ); /* Мягкий, красивый градиент */
+        background: linear-gradient(135deg, #e0eafc, #cfdef3);
         min-height: 100vh;
         padding-top: 20px;
       }
@@ -121,9 +117,6 @@
                 <a class="nav-link" href="places.html">Favorite places</a>
               </li>
             </ul>
-            <button class="btn btn-outline-danger ms-auto" onclick="logout()">
-              Выйти
-            </button>
           </div>
         </div>
       </nav>
@@ -163,19 +156,7 @@
       crossorigin="anonymous"
     ></script>
     <script>
-      // 1. Проверяем, авторизован ли пользователь при загрузке страницы
-      document.addEventListener("DOMContentLoaded", () => {
-        const isAuthenticated = localStorage.getItem("isAuthenticated");
-        if (isAuthenticated === "true") {
-          document.getElementById("login-form").classList.add("hidden");
-          document.getElementById("website-content").classList.remove("hidden");
-        } else {
-          document.getElementById("login-form").classList.remove("hidden");
-          document.getElementById("website-content").classList.add("hidden");
-        }
-      });
-
-      // 2. Функция для проверки учетных данных и входа
+      // Функция для проверки учетных данных и входа.
       function checkCredentials() {
         const correctLogin = "12345";
         const correctPassword = "12345";
@@ -188,30 +169,27 @@
           enteredLogin === correctLogin &&
           enteredPassword === correctPassword
         ) {
-          localStorage.setItem("isAuthenticated", "true");
+          // Показываем контент и скрываем форму входа
           document.getElementById("login-form").classList.add("hidden");
           document.getElementById("website-content").classList.remove("hidden");
+          messageElement.textContent = ""; // Очищаем сообщение об ошибке
         } else {
           messageElement.textContent =
             "Неверный логин или пароль. Попробуйте снова.";
         }
       }
 
-      // 3. Добавляем прослушиватель событий для клавиши Enter
+      // Добавляем прослушиватель событий для клавиши Enter
       document.addEventListener("keydown", function (event) {
-        if (event.key === "Enter") {
+        // Проверяем, что нажата клавиша "Enter" и что форма входа видима
+        if (
+          event.key === "Enter" &&
+          !document.getElementById("login-form").classList.contains("hidden")
+        ) {
           event.preventDefault(); // Предотвращаем стандартное поведение (отправку формы)
           checkCredentials();
         }
       });
-
-      // 4. Функция для выхода из системы
-      function logout() {
-        localStorage.removeItem("isAuthenticated");
-        document.getElementById("login-form").classList.remove("hidden");
-        document.getElementById("website-content").classList.add("hidden");
-        window.location.reload(); // Перезагружаем страницу для очистки
-      }
     </script>
   </body>
 </html>
