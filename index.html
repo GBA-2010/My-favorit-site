@@ -1,207 +1,227 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Богдан Гребенюк</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
-      crossorigin="anonymous"
-    />
-    
-    <style>
-      /* Основные стили для сайта */
-      body {
-        background-color: #f8f9fa;
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-          "Helvetica Neue", Arial, sans-serif;
-      }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Богдан Гребенюк</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
 
-      /* Стили для формы входа */
-      #login-form-container {
-        text-align: center;
-        margin-top: 100px;
-        background-color: #ffffff;
-        padding: 40px;
-        border-radius: 10px;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-        max-width: 400px;
-        margin-left: auto;
-        margin-right: auto;
-      }
+    <style>
+      /* Основные стили для сайта */
+      body {
+        background-color: #f8f9fa;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, sans-serif;
+      }
 
-      #login-form input,
-      #login-form button {
-        padding: 12px;
-        margin: 8px 0;
-        border-radius: 5px;
-        border: 1px solid #ddd;
-        transition: all 0.3s ease;
-        width: 100%;
-        box-sizing: border-box;
-      }
+      /* Стили для формы входа */
+      #login-form-container {
+        text-align: center;
+        margin-top: 100px;
+        background-color: #ffffff;
+        padding: 40px;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+      }
 
-      #login-form input:focus {
-        outline: none;
-        border-color: #007bff;
-        box-shadow: 0 0 5px rgba(0, 123, 255, 0.25);
-      }
+      #login-form input,
+      #login-form button {
+        padding: 12px;
+        margin: 8px 0; /* Изменен margin для лучшего вида с width: 100% */
+        border-radius: 5px;
+        border: 1px solid #ddd;
+        transition: all 0.3s ease;
+        width: 100%;
+        box-sizing: border-box; /* Учитывает padding и border в общей ширине */
+      }
 
-      #login-form button {
-        background-color: #007bff;
-        color: white;
-        border: none;
-        cursor: pointer;
-      }
+      #login-form input:focus {
+        outline: none;
+        border-color: #007bff;
+        box-shadow: 0 0 5px rgba(0, 123, 255, 0.25);
+      }
 
-      #login-form button:hover {
-        background-color: #0056b3;
-      }
-      
-      #message {
-        color: #dc3545;
-        margin-top: 10px;
-      }
+      #login-form button {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
 
-      /* Стили для основного контента */
-      #website-content {
-        background: linear-gradient(135deg, #e0eafc, #cfdef3);
-        min-height: 100vh;
-        /* Убран padding-top: 20px; чтобы меню было в самом верху */
-      }
+      #login-form button:hover {
+        background-color: #0056b3;
+      }
+      
+      #message {
+        color: #dc3545; /* Bootstrap цвет для опасности */
+        margin-top: 10px;
+      }
 
-      .rounded-img {
-        width: 60%;
-        border-radius: 50%;
-        box-shadow: 0 0 0 10px rgba(0, 0, 0, 0.4);
-        padding: 0.5em;
-        margin-bottom: 1em;
-      }
-    </style>
-  </head>
-  <body>
-    
-    <!-- Контейнер авторизации -->
-    <div id="login-form-container">
-      <h2>Введите логин и пароль</h2>
-      <form id="login-form">
-        <div>
-          <label for="loginInput" class="visually-hidden">Логин</label>
-          <input type="text" id="loginInput" placeholder="Логин" required />
-        </div>
-        <div>
-          <label for="passwordInput" class="visually-hidden">Пароль</label>
-          <input type="password" id="passwordInput" placeholder="Пароль" required />
-        </div>
-        <button type="submit">Войти</button>
-        <p id="message" role="alert" aria-live="polite"></p>
-      </form>
-    </div>
+      .hidden {
+        display: none;
+      }
+      
+      /* Стандартный класс Bootstrap для визуального скрытия элементов */
+      .visually-hidden {
+        position: absolute !important;
+        width: 1px !important;
+        height: 1px !important;
+        padding: 0 !important;
+        margin: -1px !important;
+        overflow: hidden !important;
+        clip: rect(0, 0, 0, 0) !important;
+        white-space: nowrap !important;
+        border: 0 !important;
+      }
 
-    <!-- Основной контент сайта (скрыт по умолчанию классом d-none) -->
-    <div id="website-content" class="d-none">
-      
-      <!-- Навигация: добавлен класс sticky-top -->
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
-        <div class="container">
-          <a class="navbar-brand p-0" href="#">
-            <img src="BB.png" alt="Логотип BB" width="40" />
-          </a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="places.html">Favorite places</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-      
-      <div class="container text-center my-5">
-        <div class="row">
-          <div class="col-lg-6 col-md-8 mx-auto">
-            <img
-              class="rounded-img"
-              src="6d0fc341aba58e8520aa8b0979de092e_1574343363.jpg"
-              alt="Фотография Богдана Гребенюка"
-            />
-            <h1 class="fw-light">Bogdan Grebenyuk</h1>
-            <p>
-              Мир моими глазами. Здесь вы найдёте мой фотодневник путешествий. Я
-              показываю места, которые меня впечатлили, и рассказываю о том, что
-              осталось за кадром. Присоединяйтесь к моему путешествию и откройте
-              для себя новые направления.
-              <a href="https://ya.ru/" target="_blank" class="btn btn-primary mt-3">
-                My website
-              </a>
-              <a
-                href="https://gemini.google.com/?hl=ru"
-                target="_blank"
-                class="btn btn-warning mt-3"
-              >
-                My gemini
-              </a>
-            </p>
-            <!-- Добавил немного пустого места внизу, чтобы вы могли протестировать прокрутку -->
-            <div style="height: 1000px;"></div> 
-          </div>
-        </div>
-      </div>
-    </div>
+      /* Стили для основного контента */
+      #website-content {
+        background: linear-gradient(135deg, #e0eafc, #cfdef3);
+        min-height: 100vh;
+      }
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-      crossorigin="anonymous"
-    ></script>
-    
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const loginFormContainer = document.getElementById("login-form-container");
-        const loginForm = document.getElementById("login-form");
-        const loginInput = document.getElementById("loginInput");
-        const passwordInput = document.getElementById("passwordInput");
-        const messageElement = document.getElementById("message");
-        const websiteContent = document.getElementById("website-content");
+      .rounded-img { /* Исправлена опечатка 'rouned' -> 'rounded' */
+        width: 60%;
+        border-radius: 50%;
+        box-shadow: 0 0 0 10px rgba(0, 0, 0, 0.4);
+        padding: 0.5em;
+        margin-bottom: 1em;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="login-form-container">
+      <h2>Введите логин и пароль</h2>
+      <form id="login-form">
+        <div>
+          <label for="loginInput" class="visually-hidden">Логин</label>
+          <input type="text" id="loginInput" placeholder="Логин" required />
+        </div>
+        <div>
+          <label for="passwordInput" class="visually-hidden">Пароль</label>
+          <input type="password" id="passwordInput" placeholder="Пароль" required />
+        </div>
+        <button type="submit">Войти</button>
+        <p id="message" role="alert" aria-live="polite"></p>
+      </form>
+    </div>
 
-        function checkCredentials() {
-          const correctLogin = "12345";
-          const correctPassword = "12345";
+    <div id="website-content" class="hidden">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+          <a class="navbar-brand p-0" href="#">
+            <img src="BB.png" alt="Логотип BB" width="40" />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="places.html">Favorite places</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div class="container text-center my-5">
+        <div class="row">
+          <div class="col-lg-6 col-md-8 mx-auto">
+            <img
+              class="rounded-img"               src="6d0fc341aba58e8520aa8b0979de092e_1574343363.jpg"
+              alt="Фотография Богдана Гребенюка"
+            />
+            <h1 class="fw-light">Bogdan Grebenyuk</h1>
+            <p>
+              Мир моими глазами. Здесь вы найдёте мой фотодневник путешествий. Я
+              показываю места, которые меня впечатлили, и рассказываю о том, что
+              осталось за кадром. Присоединяйтесь к моему путешествию и откройте
+              для себя новые направления.
+              <a href="https://ya.ru/" target="_blank" class="btn btn-primary">
+                My website
+              </a>
+              <a
+                href="https://gemini.google.com/?hl=ru"
+                target="_blank"
+                class="btn btn-warning"
+              >
+                My gemini
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
 
-          const enteredLogin = loginInput.value;
-          const enteredPassword = passwordInput.value;
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      // Ожидаем полной загрузки DOM, прежде чем вешать обработчики
+      document.addEventListener("DOMContentLoaded", function () {
+        
+        // Получаем элементы один раз
+        const loginFormContainer = document.getElementById("login-form-container");
+        const loginForm = document.getElementById("login-form");
+        const loginInput = document.getElementById("loginInput");
+        const passwordInput = document.getElementById("passwordInput");
+        const messageElement = document.getElementById("message");
+        const websiteContent = document.getElementById("website-content");
 
-          if (enteredLogin === correctLogin && enteredPassword === correctPassword) {
-            // Скрываем форму и показываем сайт, используя классы Bootstrap (d-none)
-            loginFormContainer.classList.add("d-none");
-            websiteContent.classList.remove("d-none");
-            messageElement.textContent = ""; 
-          } else {
-            messageElement.textContent = "Неверный логин или пароль. Попробуйте снова.";
-          }
-        }
+        // Функция для проверки учетных данных
+        function checkCredentials() {
+          // ВНИМАНИЕ: Это небезопасно для реального сайта!
+          const correctLogin = "12345";
+          const correctPassword = "12345";
 
-        loginForm.addEventListener("submit", function (event) {
-          event.preventDefault(); 
-          checkCredentials();
-        });
-      });
-    </script>
-  </body>
+          const enteredLogin = loginInput.value;
+          const enteredPassword = passwordInput.value;
+
+          if (
+            enteredLogin === correctLogin &&
+            enteredPassword === correctPassword
+          ) {
+            // Показываем контент и скрываем форму входа
+            loginFormContainer.classList.add("hidden");
+            websiteContent.classList.remove("hidden");
+            messageElement.textContent = ""; // Очищаем сообщение об ошибке
+          } else {
+            messageElement.textContent =
+              "Неверный логин или пароль. Попробуйте снова.";
+          }
+        }
+
+        // Добавляем прослушиватель событий 'submit' на форму
+        loginForm.addEventListener("submit", function (event) {
+          event.preventDefault(); // Предотвращаем стандартную отправку формы
+          checkCredentials();
+        });
+      });
+    </script>
+  </body>
 </html>
